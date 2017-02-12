@@ -4,38 +4,25 @@ generatePixels();
 
 
 function generatePixels(){
-	for (i=0; i<200; i++){
-	$(".8bitProcessor").append("<div class='pixel "+ i +"' style='background-color: rgba(255,0,255,1); width: 4%; height: 4%; padding: 2%; float: left'></div>")
+	for (i=0; i<1000; i++){
+	$(".8bitProcessor").append("<div class='pixel "+ i +"' style='background-color: black; width: 2%; height: 2%; padding: 2%; float: left;opacity:0.2;'></div>")
 	}
 	pulsePixels();
-	pulsePixels();
 };
 
-function pulsePixels1() {
-	$(".pixel").each(function (i) {
-    // store the item around for use in the 'timeout' function
-    var $item = $(this); 
-    // execute this function sometime later:
-    setTimeout(function() { 
-      $item.fadeTo(500, .1).delay(500).fadeTo(500, 1);
-    }, 50*i);
-    // each element should animate half a second after the last one.
-  });
-	pulsePixels2();
-};
+function pulsePixels(){
+	setInterval(function(){
+		var randomPixel1 = "."+ Math.floor(Math.random()*1000);
+		var randomPixel2 = "."+ Math.floor(Math.random()*1000);
+		var randomPixel3 = "."+ Math.floor(Math.random()*1000);
+		var randomPixel4 = "."+ Math.floor(Math.random()*1000);
+		$(randomPixel1).fadeTo(2000, .9).delay(6000).fadeTo(1000, .2);
+		$(randomPixel2).fadeTo(2000, .9).delay(5000).fadeTo(1000, .2);
+		$(randomPixel3).fadeTo(2000, .9).delay(4000).fadeTo(1000, .2);
+		$(randomPixel4).fadeTo(2000, .9).delay(3000).fadeTo(1000, .2);
+	},100)
+}
 
-function pulsePixels2() {
-	$(".pixel").each(function (i) {
-    // store the item around for use in the 'timeout' function
-    var $item = $(this); 
-    // execute this function sometime later:
-    setTimeout(function() { 
-      $item.fadeTo(500, .1).delay(500).fadeTo(500, 1);
-    }, 50*i);
-    // each element should animate half a second after the last one.
-  });
-	pulsePixels1();
-};
 
 /*
 function pulsePixels() {
