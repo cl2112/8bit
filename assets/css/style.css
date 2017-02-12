@@ -3,4 +3,11 @@ body {
 	width: 100%;
 	background-image: url(../images/chip.jpg);
 	position: relative;
+	background-attachment: fixed;
+};
+
+.bitProcessor {
+	position: absolute;
+	top: 0%;
+	left: 0%;
 }
